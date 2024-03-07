@@ -1,0 +1,25 @@
+from linked_list import LinkedList
+from linked_hash import LinkedHash
+from linked_stack import LinkedStack
+from arsenal_team import arsenal_players
+
+# Create a LinkedList with player names and attrbutes. 
+players_linked_list = LinkedList()
+for player_name, player_info in arsenal_players.items():
+    player_data = {'Name': player_name}  # Create a new dictionary with the player's name
+    player_data.update(player_info)  # Add the player's attributes to this dictionary
+    players_linked_list.append(player_data)
+#players_linked_list.print()
+
+# Create LinkedStack with player names
+players_linked_stack = LinkedStack()
+for player_name in arsenal_players:
+    players_linked_stack.push(player_name)
+#players_linked_stack.print_stack()
+
+# Create LinkedHash with player name and attributes
+players_linked_hash = LinkedHash()
+for player_name, attributes in arsenal_players.items():
+    players_linked_hash.associate(player_name, attributes)
+players_linked_hash.print()
+
